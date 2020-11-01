@@ -17,7 +17,7 @@ body {
 .container {
     background-color: rgb(21, 32, 43);
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
 }
 .navigation-container{
@@ -46,6 +46,7 @@ body {
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
+    position: fixed;
     min-width: 200px;
 }
 
@@ -85,11 +86,12 @@ body {
 }
 
 .tweets-search-container input{
-    color:#8899A6;
+    color:white;
     font-size: 15px;
     background-color: transparent;
     border:none;
     flex:1;
+    padding:20px;
     outline:none;
     font-weight: 400;
 }
@@ -109,6 +111,8 @@ body {
     width: 55%;
     height: 500px;
     margin: 20px;
+    position: fixed;
+    max-width: 400px;
 }
 .logo i{
     font-size: 30px;
@@ -166,7 +170,7 @@ body {
     align-items: center;
     height: 20px;
     margin-top: 30px;
-    position: absolute;
+    position: fixed;
     bottom:0;
     left:0;
     margin-bottom: 10px;
@@ -218,7 +222,9 @@ body {
     background-color:   #162D40 ;
     transition-duration: 0.2s;
 }
-
+#search-submit{
+    cursor: pointer;
+}
 .tweets-trending{
     color:white;
     display: flex;
@@ -288,4 +294,62 @@ body {
     padding:15px;
     color:var(--primary-blue);
     justify-content: flex-start;
+}
+
+.hastag span{
+    cursor: pointer;
+}
+
+.next-page-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.next-page-button{
+    width: 50%;
+    height: 30px;
+    background-color: #192734;
+    color:var(--grey);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.next-page-button:hover{
+    border: 0.1px solid var(--primary-blue);
+}
+
+.next-page-button i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-message{
+    color:var(--grey);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome-message h5{
+    margin-bottom: 0;
+    font-weight: 800;
+    font-size: 30px;
+}
+.welcome-message p{
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+}
+
+
+.trends-location{
+    overflow: hidden scroll;
+    height: 450px;
 }

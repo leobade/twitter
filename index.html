@@ -4,14 +4,17 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Title</title>
+    <title>Twitter</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/tweet.css">
     <script src="https://kit.fontawesome.com/c939d0e917.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        crossorigin="anonymous"></script>
 
 </head>
+
 
 <body>
     <div class="container home-page">
@@ -80,45 +83,18 @@
         </div>
         <div class="main">
             <div class="tweets-search-container">
-                <i class="fas fa-search"></i>
-                <input type="text" placeholder="Search Twitter" id="user-search-input">
+                <i class="fas fa-search" id="search-submit" onclick="getTwitterData()"></i>
+                <input type="text" placeholder="Search Twitter" id="user-search-input" onkeyup="onEnter(event)">
             </div>
-            <div class="tweets-list">
-                <div class="tweet-container">
-                    <div class="tweet-profile-picture">
-                        <a></a>
-                    </div>
-
-                    <div class="tweet-data">
-                        <div class="tweet-user-info">
-                            <div class="profile-name">Leonardo Badellino</div>
-                            <div class="profile-tag">@leobade</div>
-                            <div class="tweet-date-container">. 4h</div>
-                        </div>
-                        <div class="tweet-text-container">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been
-                            the
-                        </div>
-                        <div class="tweet-images-container">
-                            <div class="tweet-image"></div>
-                        </div>
-                        <div class="tweet-action">
-                            <div class="hover comment">
-                                <i class="far fa-comment"></i>
-                            </div>
-                            <div class="hover retweet">
-                                <i class="fas fa-retweet"></i>
-                            </div>
-                            <div class="hover like">
-                                <i class="far fa-heart"></i>
-                            </div>
-                            <div class="hover other-action">
-                                <i class="fas fa-upload"></i>
-                            </div>
-                        </div>
-                    </div>
-
+            <div class="tweets-list" id="tweets-list">
+                <div class="welcome-message">
+                    <h5>Welcome to twitter!</h5>
+                    <p>Use the search above to see what's happenening around the world.</p>
+                </div>
+            </div>
+            <div class="next-page-container" id="next-page-container" onclick="onNextPage()" style="display: none;">
+                <div class="next-page-button">
+                    <i class="fas fa-arrow-down"></i>
                 </div>
             </div>
         </div>
@@ -131,24 +107,13 @@
                                 <span>Trends for you</span>
                             </div>
                             <div class="setting-trend">
-                                <i class="fas fa-cog"></i> </div>
+                                <i class="fas fa-cog"></i>
+                            </div>
                         </div>
 
 
                     </div>
-                    <div class="trends">
-                        <div class="header-trends gray small ">
-                            <span id="trend-info">Trending in italy</span>
-                        </div>
-                        <div class="hastag bold white mt5">
-                            <span id="trend-tag">#Coding</span>
-                        </div>
-                        <div class="tweets-number small mt5 gray">
-                            <span id="number-tweets-trend">1,688 Tweets</span>
-                        </div>
-                    </div>
-                    <div class="show-more">
-                        <span>Show more</span>
+                    <div class="trends-location">
                     </div>
                 </div>
             </div>
