@@ -1,2 +1,3 @@
 .vscode/
-twitter-clone-api/.env
+#exclude env
+*.env

@@ -2,7 +2,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
-require('dotenv').config()
+require('dotenv').config({ path: '../.env' })
 const Twitter = require('./api/helper/twitter')
 const twitter = new Twitter
 app.use((req, res, next) => {
@@ -25,6 +25,7 @@ app.get('/tweets-trend', (req, res) => {
     const id = req.query.id
 
     twitter.getTrend(id).then((response) => {
+        console.log(response.data);
         res.status(200).send(response.data)
     }).catch((err) => {
         res.status(400).send(err)
