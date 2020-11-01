@@ -1,4 +1,3 @@
-# Readme twitter
 
 ## 🌟TWITTER CLONE V1 🌟
 
